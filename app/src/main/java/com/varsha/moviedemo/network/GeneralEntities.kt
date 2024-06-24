@@ -1,4 +1,4 @@
-package com.varsha.moviedemo.domain
+package com.varsha.moviedemo.network
 
 class InvalidException(message: String) : Exception(message)
 class NoConnectivityException(message: String) : Exception(message)

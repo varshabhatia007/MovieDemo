@@ -1,8 +1,6 @@
 package com.varsha.moviedemo.network
 
 import com.google.gson.Gson
-import com.varsha.moviedemo.domain.ClientErrorResponse
-import com.varsha.moviedemo.domain.InvalidException
 import retrofit2.Response
 import timber.log.Timber
 
