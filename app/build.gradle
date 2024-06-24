@@ -5,6 +5,13 @@ plugins {
     alias(libs.plugins.google.ksp)
 }
 
+// Loads the secrets from the given file for Different Variant
+def secretPropertyFile = rootProject.file("secrets.properties")
+def secretProperties = new Properties()
+secretProperties.load(new FileInputStream(secretPropertyFile))
+
+final BASE_URL = "\"https://api.themoviedb.org/3/\""
+
 android {
     namespace 'com.varsha.moviedemo'
     compileSdk 34
@@ -23,7 +30,18 @@ android {
     }
 
     buildTypes {
+        debug {
+            //API_KEY STRING
+            buildConfigField "String", "API_KEY", secretProperties['API_KEY']
+            //BASE_URL STRING
+            buildConfigField "String", "BASE_URL", BASE_URL
+        }
         release {
+            //API_KEY STRING
+            buildConfigField "String", "API_KEY", secretProperties['API_KEY']
+            //BASE_URL STRING
+            buildConfigField "String", "BASE_URL", BASE_URL
+
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
