@@ -38,7 +38,7 @@ fun MovieItem(
         modifier = Modifier
             .fillMaxWidth()
             .clickable(onClick = onClick)
-            .padding(horizontal = 8.dp, vertical = 8.dp),
+            .padding(horizontal = 16.dp, vertical = 8.dp),
         shape = RoundedCornerShape(16.dp),
     ) {
         Row(modifier = Modifier.fillMaxWidth()) {

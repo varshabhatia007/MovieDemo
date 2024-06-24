@@ -33,7 +33,7 @@ fun MoviesDetailResponse.toDomainModel(): MovieDetailDomain {
         releaseDate = this.release_date,
         runtimeWithMinutes = "${this.runtime}",
         title = this.title,
-        voteAverage = this.vote_average,
+        voteAverage = String.format("%.2f",this.vote_average).toDouble(),
     )
 }
 
