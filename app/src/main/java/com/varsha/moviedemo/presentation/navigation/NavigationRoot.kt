@@ -70,7 +70,7 @@ fun NavGraphBuilder.detailsNavGraph(navController: NavHostController) {
             val movieId = it.arguments?.getString("movieId") ?: ""
             val movieDetailedViewModel = hiltViewModel<MovieDetailedViewModel>()
             val stateMovieDetail by movieDetailedViewModel.detailsMovie.collectAsStateWithLifecycle()
-            Timber.d("VARSHA - MOVIE ID : ${movieId}")
+            Timber.d("MOVIE ID : ${movieId}")
 
             DetailsMovieScreen(
                 navController = navController,
